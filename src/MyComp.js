@@ -15,8 +15,27 @@ import React from "react";
     };
   
     render = () => {
+      console.log("render function re-rendered") ;
       return (
         <div>
+          <button
+          onClick = { () => {
+
+            this.setState({someNumber: this.state.someNumber + 1  })
+
+          }  }
+        >
+          increment
+        </button>
+        
+        <button 
+          onClick = { () => {
+            this.setState( { someNumber:this.state.someNumber - 1})
+          }}
+        >
+          decreament
+        </button>
+
           <h1> {this.state.someNumber} </h1>
         </div>
       );
