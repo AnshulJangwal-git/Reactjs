@@ -1,5 +1,8 @@
 import React from "react";
-import "./App.css" ;
+import "./App.css";
+import List from "./List";
+
+
 class App extends React.Component {
   state = {
     tasks: ["make coffee", "make notes", "go for a job", "new task"],
@@ -9,29 +12,26 @@ class App extends React.Component {
   render = () => {
     return (
       <div>
-        <input 
-        className = "input-box"
-        type="text"
+        <input
+          className="input-box"
+          type="text"
           onChange={(e) => {
             this.setState({ currInput: e.target.value });
           }}
 
-            onKeyDown = {(e) => {
-              if(e.key == "Enter"){
-                this.setState({
-                  tasks : [...this.state.tasks, this.state.currInput], 
-                  currInput : "", 
-                });
-              }
-            }}
-            value = {this.state.currInput}
+          onKeyDown={(e) => {
+            if (e.key == "Enter") {
+              this.setState({
+                tasks: [...this.state.tasks, this.state.currInput],
+                currInput: "",
+              });
+            }
+          }}
+          value={this.state.currInput}
         />
 
-        <ul>
-          {this.state.tasks.map((el) => {
-            return <li>{el}</li>;
-          })}
-        </ul>
+      <List tasks = {this.state.tasks}/>
+        
       </div>
     );
   };

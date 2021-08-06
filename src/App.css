@@ -4,5 +4,21 @@ input{
     outline: none;
     color: white;
 
+}
 
+button{
+    height: 2rem;
+    width: 4rem;
+    margin-left: 1rem;
+    background: rebeccapurple;
+    color: white;
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+}
+
+button:hover{
+    transform: scale(1.2);
+    /* transform-style: preserve-3d; */
 }
